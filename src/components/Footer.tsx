@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -98,12 +99,15 @@ const Footer = () => {
               © 2024 Aevus. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-smooth">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-smooth">
+              <Link to="/terms-of-service" className="text-sm text-muted-foreground hover:text-foreground transition-smooth">
                 Terms of Service
-              </a>
+              </Link>
+              <Link to="/terms-conditions" className="text-sm text-muted-foreground hover:text-foreground transition-smooth">
+                Terms & Conditions
+              </Link>
+              <Link to="/privacy-policy" className="text-sm text-muted-foreground hover:text-foreground transition-smooth">
+                Privacy Policy
+              </Link>
               <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-smooth">
                 Support
               </a>
