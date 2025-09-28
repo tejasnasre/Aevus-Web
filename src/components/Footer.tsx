@@ -42,7 +42,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-foreground">Aevus</h3>
-                  <p className="text-xs text-muted-foreground">Smart Curriculum & Attendance</p>
+                  <p className="text-xs text-muted-foreground">Empowering smarter learning and attendance across the academic journey.</p>
                 </div>
               </div>
               <p className="text-muted-foreground">

@@ -16,7 +16,7 @@ const Header = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold text-foreground">Aevus</h1>
-              <p className="text-xs text-muted-foreground">Smart Curriculum & Attendance</p>
+              <p className="text-xs text-muted-foreground">Empowering smarter learning and attendance across the academic journey.</p>
             </div>
           </div>
 
