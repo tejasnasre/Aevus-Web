@@ -71,7 +71,7 @@ const Audience = () => {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            SmartAttend serves the complete educational ecosystem, from individual students 
+            Aevus serves the complete educational ecosystem, from individual students 
             to institutional administrators, creating value at every level.
           </p>
         </div>
@@ -114,7 +114,7 @@ const Audience = () => {
               Ready to Transform Your Institution?
             </h3>
             <p className="text-muted-foreground mb-6">
-              Join hundreds of educational institutions already benefiting from SmartAttend.
+              Join hundreds of educational institutions already benefiting from Aevus.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <div className="text-center">

@@ -15,7 +15,7 @@ const Footer = () => {
               </span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join the education revolution with SmartAttend. Start your free trial today 
+              Join the education revolution with Aevus. Start your free trial today 
               and experience the future of classroom management.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -40,7 +40,7 @@ const Footer = () => {
                   <GraduationCap className="h-6 w-6 text-primary-foreground" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-foreground">SmartAttend</h3>
+                  <h3 className="text-xl font-bold text-foreground">Aevus</h3>
                   <p className="text-xs text-muted-foreground">Smart Curriculum & Attendance</p>
                 </div>
               </div>
@@ -78,7 +78,7 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Mail className="h-4 w-4" />
-                  <span className="text-sm">contact@smartattend.com</span>
+                  <span className="text-sm">contact@aevus.com</span>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Phone className="h-4 w-4" />
@@ -95,7 +95,7 @@ const Footer = () => {
           {/* Bottom */}
           <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2024 SmartAttend. All rights reserved.
+              © 2024 Aevus. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-smooth">

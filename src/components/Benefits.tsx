@@ -49,7 +49,7 @@ const Benefits = () => {
                 </span>
               </h2>
               <p className="text-xl text-muted-foreground">
-                Discover how SmartAttend revolutionizes classroom efficiency while creating 
+                Discover how Aevus revolutionizes classroom efficiency while creating 
                 meaningful learning opportunities for every student.
               </p>
             </div>
