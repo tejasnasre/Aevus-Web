@@ -1,85 +1,56 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
-import heroImage from "@/assets/hero-classroom.jpg";
+import { ArrowRight, GraduationCap, Users, Shield } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="pt-24 pb-16 min-h-screen flex items-center">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 bg-accent/50 px-4 py-2 rounded-full">
-                <div className="w-2 h-2 gradient-primary rounded-full"></div>
-                <span className="text-sm font-medium text-accent-foreground">
-                  Next-Gen Educational Technology
-                </span>
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
-                Smart Curriculum
-                <span className="block gradient-primary bg-clip-text text-transparent">
-                  Activity & Attendance
-                </span>
-              </h1>
-              
-              <p className="text-xl text-muted-foreground max-w-xl">
-                Revolutionize classroom management with automated attendance tracking 
-                and personalized learning activities. Transform idle time into productive 
-                educational moments.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="xl" className="group">
-                Start Free Trial
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="xl" className="group">
-                <Play className="group-hover:scale-110 transition-transform" />
-                Watch Demo
-              </Button>
-            </div>
-
-            <div className="flex items-center gap-8 pt-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">99%</div>
-                <div className="text-sm text-muted-foreground">Accuracy Rate</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">5min</div>
-                <div className="text-sm text-muted-foreground">Setup Time</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">24/7</div>
-                <div className="text-sm text-muted-foreground">Support</div>
-              </div>
-            </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-accent/5 -z-10" />
+      
+      <div className="container mx-auto px-4 py-20">
+        <div className="text-center max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Smart Attendance Management
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Empowering smarter learning and attendance across the academic journey with innovative technology solutions.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <Button size="lg" className="text-lg px-8 py-6">
+              Get Started
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button variant="outline" size="lg" className="text-lg px-8 py-6">
+              Learn More
+            </Button>
           </div>
-
-          {/* Image */}
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-large">
-              <img 
-                src={heroImage} 
-                alt="Modern classroom with students using technology for attendance"
-                className="w-full h-[600px] object-cover"
-              />
-              <div className="absolute inset-0 gradient-secondary opacity-20"></div>
+          
+          {/* Feature highlights */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            <div className="text-center p-6 rounded-lg bg-card shadow-soft">
+              <div className="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-lg flex items-center justify-center">
+                <GraduationCap className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Smart Learning</h3>
+              <p className="text-muted-foreground">Advanced algorithms for personalized education experiences</p>
             </div>
             
-            {/* Floating cards */}
-            <div className="absolute -top-4 -left-4 bg-card p-4 rounded-xl shadow-medium border">
-              <div className="text-sm font-medium text-card-foreground">
-                ✅ Real-time Tracking
+            <div className="text-center p-6 rounded-lg bg-card shadow-soft">
+              <div className="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-lg flex items-center justify-center">
+                <Users className="h-6 w-6 text-primary" />
               </div>
+              <h3 className="text-lg font-semibold mb-2">User Management</h3>
+              <p className="text-muted-foreground">Comprehensive role-based access control system</p>
             </div>
             
-            <div className="absolute -bottom-4 -right-4 bg-card p-4 rounded-xl shadow-medium border">
-              <div className="text-sm font-medium text-card-foreground">
-                🎯 Personalized Learning
+            <div className="text-center p-6 rounded-lg bg-card shadow-soft">
+              <div className="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-lg flex items-center justify-center">
+                <Shield className="h-6 w-6 text-primary" />
               </div>
+              <h3 className="text-lg font-semibold mb-2">Secure Platform</h3>
+              <p className="text-muted-foreground">Enterprise-grade security for all your data</p>
             </div>
           </div>
         </div>

@@ -1,96 +1,72 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { QrCode, Wifi, Camera, Monitor, Target, Calendar, Shield, Zap } from "lucide-react";
-import dashboardImage from "@/assets/dashboard-preview.jpg";
+import { Clock, Users, Shield, Smartphone, Brain, Database } from "lucide-react";
 
 const Features = () => {
   const features = [
     {
-      icon: QrCode,
-      title: "QR Code Attendance",
-      description: "Students scan QR codes for instant, contactless attendance marking with 99% accuracy.",
-    },
-    {
-      icon: Wifi,
-      title: "Proximity Detection",
-      description: "Bluetooth and Wi-Fi proximity sensors automatically detect student presence in real-time.",
-    },
-    {
-      icon: Camera,
-      title: "Face Recognition",
-      description: "Advanced AI-powered facial recognition for seamless and secure attendance tracking.",
-    },
-    {
-      icon: Monitor,
-      title: "Real-time Display",
-      description: "Live attendance dashboard displayed on classroom screens for instant visibility.",
-    },
-    {
-      icon: Target,
-      title: "Personalized Activities",
-      description: "AI suggests relevant academic tasks during free periods based on student goals.",
-    },
-    {
-      icon: Calendar,
-      title: "Smart Scheduling",
-      description: "Integrates with timetables to create optimized daily routines for each student.",
-    },
-    {
       icon: Shield,
-      title: "Secure & Private",
-      description: "Enterprise-grade security ensuring student data privacy and GDPR compliance.",
+      title: "Multi-Layer Security",
+      description: "Advanced security with BLE proximity detection, GPS validation, and biometric authentication for fraud-proof attendance."
     },
     {
-      icon: Zap,
-      title: "Minimal Setup",
-      description: "Deploy in minutes with existing hardware - no complex infrastructure required.",
+      icon: Brain,
+      title: "AI-Powered Insights",
+      description: "Intelligent recommendations and personalized learning suggestions powered by advanced AI algorithms."
+    },
+    {
+      icon: Users,
+      title: "Role-Based Access",
+      description: "Comprehensive RBAC system with hierarchical permissions for administrators, HODs, teachers, and students."
+    },
+    {
+      icon: Smartphone,
+      title: "Mobile-First Design",
+      description: "Native mobile experience with offline synchronization and cross-platform compatibility."
+    },
+    {
+      icon: Clock,
+      title: "Real-Time Tracking",
+      description: "Live attendance monitoring with instant notifications and comprehensive analytics dashboard."
+    },
+    {
+      icon: Database,
+      title: "Smart Data Management",
+      description: "Secure cloud storage with intelligent data processing and comprehensive reporting capabilities."
     }
   ];
 
   return (
-    <section id="features" className="py-20 bg-muted/30">
+    <section id="features" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Powerful Features for
-            <span className="block gradient-primary bg-clip-text text-transparent">
-              Modern Education
-            </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Powerful Features for Modern Education
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Experience the future of classroom management with our comprehensive suite of 
-            automated attendance and personalized learning tools.
+            Comprehensive attendance management with cutting-edge technology and user-centric design
           </p>
         </div>
 
-        {/* Feature Image */}
-        <div className="mb-20">
-          <div className="relative max-w-4xl mx-auto">
-            <img 
-              src={dashboardImage}
-              alt="Dashboard showing real-time attendance analytics and student activities"
-              className="w-full rounded-2xl shadow-large"
-            />
-            <div className="absolute inset-0 gradient-secondary opacity-10 rounded-2xl"></div>
-          </div>
-        </div>
-
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <Card key={index} className="hover:shadow-medium transition-smooth border-0 bg-card/50 backdrop-blur-sm">
-              <CardHeader className="pb-4">
-                <div className="gradient-primary p-3 rounded-lg w-fit shadow-soft">
-                  <feature.icon className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <CardTitle className="text-lg">{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            
+            return (
+              <Card key={index} className="transition-smooth hover:shadow-medium">
+                <CardHeader>
+                  <div className="w-12 h-12 mb-4 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-foreground">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
