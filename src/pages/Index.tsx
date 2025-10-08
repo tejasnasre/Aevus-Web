@@ -1,21 +1,41 @@
-import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import RBACFlow from "@/components/RBACFlow";
-import AttendanceFlow from "@/components/AttendanceFlow";
-import AppScreensGallery from "@/components/AppScreensGallery";
+import StatisticsSection from "@/components/StatisticsSection";
+import ProblemSection from "@/components/ProblemSection";
+import ImpactSection from "@/components/ImpactSection";
+import SolutionSection from "@/components/SolutionSection";
+import AttendanceMethods from "@/components/AttendanceMethods";
+import PersonalizedLearning from "@/components/PersonalizedLearning";
+import FeaturesGrid from "@/components/FeaturesGrid";
+import RoleBasedFeatures from "@/components/RoleBasedFeatures";
+import StakeholdersSection from "@/components/StakeholdersSection";
+import NEPAlignment from "@/components/NEPAlignment";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import DeviceShowcase from "@/components/DeviceShowcase";
+import FAQSection from "@/components/FAQSection";
+import CTASection from "@/components/CTASection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Header />
       <main>
         <Hero />
-        <Features />
-        <RBACFlow />
-        <AttendanceFlow />
-        <AppScreensGallery />
+        <StatisticsSection />
+        <ProblemSection />
+        <ImpactSection />
+        <SolutionSection />
+        <AttendanceMethods />
+        <PersonalizedLearning />
+        <FeaturesGrid />
+        <RoleBasedFeatures />
+        <StakeholdersSection />
+        <NEPAlignment />
+        <TestimonialsSection />
+        <DeviceShowcase />
+        <FAQSection />
+        <CTASection />
       </main>
       <Footer />
     </div>

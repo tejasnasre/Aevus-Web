@@ -1,108 +1,104 @@
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.querySelector(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMenuOpen(false);
-  };
+  const navItems = [
+    { path: "/", label: "Features" },
+    { path: "/", label: "Solutions" },
+    { path: "/", label: "Support" },
+    { path: "/", label: "Download" }
+  ];
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="gradient-primary p-2 rounded-lg shadow-soft">
-              <GraduationCap className="h-6 w-6 text-primary-foreground" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-foreground">Aevus</h1>
-            </div>
+    <div className="fixed top-0 left-0 right-0 z-50 pt-4 px-4">
+      <motion.header
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto"
+      >
+        <div className="relative rounded-full bg-white/95 backdrop-blur-md border border-gray-200 shadow-lg px-6 py-3">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-2">
+              <div className="flex gap-1">
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+              </div>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    isActive(item.path)
+                      ? "text-primary"
+                      : "text-gray-600 hover:text-gray-900"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <Button 
+                size="sm" 
+                className="ml-4 rounded-full px-6 bg-blue-500 hover:bg-blue-600 text-white"
+              >
+                Download
+              </Button>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
           </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <button 
-              onClick={() => scrollToSection('#features')}
-              className="text-muted-foreground hover:text-foreground transition-smooth"
-            >
-              Features
-            </button>
-            <button 
-              onClick={() => scrollToSection('#rbac')}
-              className="text-muted-foreground hover:text-foreground transition-smooth"
-            >
-              RBAC System
-            </button>
-            <button 
-              onClick={() => scrollToSection('#attendance')}
-              className="text-muted-foreground hover:text-foreground transition-smooth"
-            >
-              Attendance Flow
-            </button>
-            <button 
-              onClick={() => scrollToSection('#screens')}
-              className="text-muted-foreground hover:text-foreground transition-smooth"
-            >
-              App Screens
-            </button>
-            <Button variant="default" size="sm">
-              Get Started
-            </Button>
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation Dropdown */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
-            <div className="flex flex-col gap-4">
-              <button 
-                onClick={() => scrollToSection('#features')}
-                className="text-muted-foreground hover:text-foreground transition-smooth text-left"
-              >
-                Features
-              </button>
-              <button 
-                onClick={() => scrollToSection('#rbac')}
-                className="text-muted-foreground hover:text-foreground transition-smooth text-left"
-              >
-                RBAC System
-              </button>
-              <button 
-                onClick={() => scrollToSection('#attendance')}
-                className="text-muted-foreground hover:text-foreground transition-smooth text-left"
-              >
-                Attendance Flow
-              </button>
-              <button 
-                onClick={() => scrollToSection('#screens')}
-                className="text-muted-foreground hover:text-foreground transition-smooth text-left"
-              >
-                App Screens
-              </button>
-              <Button variant="default" size="sm" className="w-fit">
-                Get Started
+          <motion.nav
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="md:hidden mt-4 rounded-2xl bg-white border border-gray-200 shadow-xl p-4"
+          >
+            <div className="flex flex-col gap-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`px-4 py-3 rounded-xl text-left transition-colors ${
+                    isActive(item.path)
+                      ? "bg-blue-50 text-primary font-semibold"
+                      : "text-gray-600 hover:bg-gray-50"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <Button size="sm" className="w-full rounded-xl mt-2 bg-blue-500 text-white">
+                Download
               </Button>
             </div>
-          </nav>
+          </motion.nav>
         )}
-      </div>
-    </header>
+      </motion.header>
+    </div>
   );
 };
 
