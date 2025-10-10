@@ -39,7 +39,7 @@ const DeviceShowcase = () => {
       : screenshots.filter((s) => s.category === activeCategory);
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-24 bg-transparent">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -127,16 +127,14 @@ const DeviceShowcase = () => {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 className="group relative"
               >
-                <div className="bg-white rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-all">
-                  <img
-                    src={screenshot.src}
-                    alt={screenshot.title}
-                    className="w-full h-auto rounded-xl object-contain"
-                  />
-                  <p className="mt-3 text-sm font-medium text-gray-700 text-center">
-                    {screenshot.title}
-                  </p>
-                </div>
+                <img
+                  src={screenshot.src}
+                  alt={screenshot.title}
+                  className="w-full h-auto object-contain transition-all bg-transparent"
+                />
+                <p className="mt-3 text-sm font-medium text-gray-700 text-center">
+                  {screenshot.title}
+                </p>
               </motion.div>
             ))}
           </div>

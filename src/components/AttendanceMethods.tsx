@@ -44,11 +44,10 @@ const AttendanceMethods = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Multiple Attendance Methods
+            Future Attendance Methods
           </h2>
           <p className="text-lg text-gray-600">
-            Choose the method that works best for your institution. All methods
-            ensure accurate tracking and real-time updates.
+            Additional attendance methods coming soon to provide more flexibility and options for your institution.
           </p>
         </motion.div>
 
@@ -62,8 +61,13 @@ const AttendanceMethods = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group"
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group relative"
               >
+                {/* Coming Soon Badge */}
+                <div className="absolute top-4 right-4 bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-full">
+                  Coming Soon
+                </div>
+
                 <div
                   className={`w-16 h-16 mb-6 bg-gradient-to-br ${method.color} rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform`}
                 >
@@ -90,7 +94,7 @@ const AttendanceMethods = () => {
           })}
         </div>
 
-        {/* Integration Note */}
+        {/* Future Scope Note */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -98,12 +102,10 @@ const AttendanceMethods = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 max-w-4xl mx-auto"
         >
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl p-8 text-center text-white">
-            <h3 className="text-2xl font-bold mb-3">Seamless Integration</h3>
-            <p className="text-blue-50">
-              All attendance methods automatically sync with the timetable and
-              display real-time data on classroom screens. Requires minimal
-              infrastructure and basic training for staff.
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Expanding Our Capabilities</h3>
+            <p className="text-gray-600">
+              We're continuously working on adding more attendance methods to give institutions greater flexibility. These features will be available in future updates.
             </p>
           </div>
         </motion.div>

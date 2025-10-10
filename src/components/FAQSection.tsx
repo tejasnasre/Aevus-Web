@@ -11,12 +11,12 @@ const FAQSection = () => {
     {
       question: "How does the automated attendance system work?",
       answer:
-        "Our app offers three methods: QR code scanning, Bluetooth/Wi-Fi proximity detection, and face recognition. Teachers can choose the method that best suits their classroom. Attendance is automatically synced with the timetable and displayed in real-time.",
+        "Teachers start a session and generate a time-bound OTP. Students enter the OTP to begin verification. The system then performs multi-factor verification including attendance code validation, biometric authentication, GPS proximity check, location verification, and device verification. Once verified, attendance is marked and teachers can download reports in XLSX format.",
     },
     {
       question: "What infrastructure is needed to use Aevus?",
       answer:
-        "Minimal infrastructure is required. You need Android devices for users and optionally a display screen for real-time attendance visualization. The app works offline and syncs when connected to the internet.",
+        "Minimal infrastructure is required. You need Android devices for users with biometric sensors (fingerprint) and GPS capability. Optionally, a display screen can be used for real-time attendance visualization. The app syncs data when connected to the internet.",
     },
     {
       question: "How are personalized tasks generated for students?",
@@ -29,9 +29,14 @@ const FAQSection = () => {
         "Yes, we take data privacy seriously. All student and staff data is encrypted and stored securely. We comply with applicable data protection regulations and give institutions full control over their data.",
     },
     {
-      question: "Can parents track their child's attendance?",
+      question: "What verification methods are currently available?",
       answer:
-        "Yes, parents can receive real-time attendance notifications and view comprehensive attendance reports through the parent portal feature.",
+        "Currently, we use a comprehensive verification system including time-bound OTP, attendance code validation, biometric fingerprint authentication, GPS proximity check, location verification, and device verification. Additional methods like QR code scanning and face recognition are planned for future releases.",
+    },
+    {
+      question: "Can teachers export attendance data?",
+      answer:
+        "Yes, teachers can download attendance reports in XLSX (Excel) format for easy record-keeping, analysis, and sharing with administration. The export includes all verification details and timestamps.",
     },
     {
       question: "How does Aevus align with NEP 2020?",
@@ -51,7 +56,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section id="support" className="py-24 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

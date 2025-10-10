@@ -9,13 +9,17 @@ const Header = () => {
   const location = useLocation();
 
   const navItems = [
-    { path: "/", label: "Features" },
-    { path: "/", label: "Solutions" },
-    { path: "/", label: "Support" },
-    { path: "/", label: "Download" }
+    { path: "#features", label: "Features" },
+    { path: "#solutions", label: "Solutions" },
+    { path: "#support", label: "Support" }
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => {
+    if (path.startsWith('#')) {
+      return false;
+    }
+    return location.pathname === path;
+  };
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 pt-4 px-4">
@@ -29,33 +33,30 @@ const Header = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex gap-1">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-              </div>
+              <img 
+                src="/adaptive-icon.png" 
+                alt="Aevus Logo" 
+                className="w-10 h-10 rounded-lg"
+              />
             </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-1">
               {navItems.map((item) => (
-                <Link
+                <a
                   key={item.path}
-                  to={item.path}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                    isActive(item.path)
-                      ? "text-primary"
-                      : "text-gray-600 hover:text-gray-900"
-                  }`}
+                  href={item.path}
+                  className="px-4 py-2 rounded-full text-sm font-medium transition-colors text-gray-600 hover:text-gray-900"
                 >
                   {item.label}
-                </Link>
+                </a>
               ))}
               <Button 
                 size="sm" 
-                className="ml-4 rounded-full px-6 bg-blue-500 hover:bg-blue-600 text-white"
+                className="ml-4 rounded-full px-6 bg-gray-100 text-gray-500 cursor-not-allowed"
+                disabled
               >
-                Download
+                Coming Soon
               </Button>
             </nav>
 
@@ -78,21 +79,17 @@ const Header = () => {
           >
             <div className="flex flex-col gap-2">
               {navItems.map((item) => (
-                <Link
+                <a
                   key={item.path}
-                  to={item.path}
+                  href={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`px-4 py-3 rounded-xl text-left transition-colors ${
-                    isActive(item.path)
-                      ? "bg-blue-50 text-primary font-semibold"
-                      : "text-gray-600 hover:bg-gray-50"
-                  }`}
+                  className="px-4 py-3 rounded-xl text-left transition-colors text-gray-600 hover:bg-gray-50"
                 >
                   {item.label}
-                </Link>
+                </a>
               ))}
-              <Button size="sm" className="w-full rounded-xl mt-2 bg-blue-500 text-white">
-                Download
+              <Button size="sm" className="w-full rounded-xl mt-2 bg-gray-100 text-gray-500 cursor-not-allowed" disabled>
+                Coming Soon
               </Button>
             </div>
           </motion.nav>
