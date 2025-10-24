@@ -53,10 +53,12 @@ const Header = () => {
               ))}
               <Button 
                 size="sm" 
-                className="ml-4 rounded-full px-6 bg-gray-100 text-gray-500 cursor-not-allowed"
-                disabled
+                className="ml-4 rounded-full px-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700"
+                asChild
               >
-                Coming Soon
+                <a href="https://github.com/tejasnasre/Aevus/releases/download/v1.0.0-beta/aevus-arm64-v8a.apk">
+                  Download Now
+                </a>
               </Button>
             </nav>
 
@@ -88,8 +90,10 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Button size="sm" className="w-full rounded-xl mt-2 bg-gray-100 text-gray-500 cursor-not-allowed" disabled>
-                Coming Soon
+              <Button size="sm" className="w-full rounded-xl mt-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700" asChild>
+                <a href="https://github.com/tejasnasre/Aevus/releases/download/v1.0.0-beta/aevus-arm64-v8a.apk">
+                  Download Now
+                </a>
               </Button>
             </div>
           </motion.nav>

@@ -35,7 +35,10 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mb-12"
           >
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-50 to-blue-50 px-8 py-4 rounded-full border border-green-200 cursor-pointer hover:shadow-lg transition-shadow">
+            <a 
+              href="https://github.com/tejasnasre/Aevus/releases/download/v1.0.0-beta/aevus-arm64-v8a.apk"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-green-50 to-blue-50 px-8 py-4 rounded-full border border-green-200 cursor-pointer hover:shadow-lg transition-shadow"
+            >
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92z"
@@ -56,13 +59,13 @@ const Hero = () => {
               </svg>
               <div className="flex flex-col items-start">
                 <span className="text-sm font-semibold text-gray-900">
-                  Coming Soon
+                  Download Now
                 </span>
                 <span className="text-xs text-gray-600">
                   Get it on Google Play
                 </span>
               </div>
-            </div>
+            </a>
           </motion.div>
 
           <motion.div
