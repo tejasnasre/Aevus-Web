@@ -36,7 +36,7 @@ const Hero = () => {
             className="mb-12"
           >
             <a 
-              href="https://github.com/tejasnasre/Aevus/releases/download/v1.0.0-beta/aevus-arm64-v8a.apk"
+              href="https://github.com/tejasnasre/Aevus-Web/releases/download/v1.0.0.0-beta/aevus-arm64-v8a.apk"
               className="inline-flex items-center gap-3 bg-gradient-to-r from-green-50 to-blue-50 px-8 py-4 rounded-full border border-green-200 cursor-pointer hover:shadow-lg transition-shadow"
             >
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
