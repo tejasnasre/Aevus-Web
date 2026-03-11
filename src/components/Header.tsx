@@ -91,7 +91,7 @@ const Header = () => {
                 </a>
               ))}
               <Button size="sm" className="w-full rounded-xl mt-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700" asChild>
-                <a href="https://github.com/tejasnasre/Aevus-Web/releases/download/v1.0.0.0-beta/aevus-arm64-v8a.apk">
+                <a href="https://expo.dev/artifacts/eas/jBSoguqthJSt628XezTShX.apk">
                   Download Now
                 </a>
               </Button>
